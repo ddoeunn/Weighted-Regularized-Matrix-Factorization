@@ -20,6 +20,26 @@ See the [example](https://github.com/ddoeunn/Weighted-Regularized-Matrix-Factori
 
 
 
+```{.python}
+from Datasets import Movielens
+from Evaluation.data_split import split_data
+from Evaluation.ranking_metrics import *
+from WRMF.wrmf import *
+from WRMF import wrmf_rec
+
+df_movielens = Movielens.load_data()                # load dataset
+train, test = split_data(df_movielens,
+                         split_strategy="random_by_user",
+                         random_state=0)            # split data
+
+wrmf = WRMF(train, weight_strategy="uniform_pos")   # wrmf model
+model =  train_cornac(wrmf, train)                  # train model
+
+k = 10
+top_k = wrmf_rec.recommend_top_k(model, train, k)   # recommendation
+ranking_metrics(top_k, test)                        # evaluation
+
+```
 
 ---
 ## **Weighted Regularized Matrix Factorization (WRMF)**  
