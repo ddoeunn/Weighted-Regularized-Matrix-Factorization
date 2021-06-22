@@ -7,7 +7,7 @@ from utils.common.constants import (
     DEFAULT_ITEM_COL,
     DEFAULT_HEADER
 )
-from utils.download_utils import (
+from Datasets.download_utils import (
     download_path, maybe_download, extract_file_from_zip
 )
 

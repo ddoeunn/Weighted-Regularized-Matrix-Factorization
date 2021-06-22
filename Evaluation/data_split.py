@@ -249,11 +249,13 @@ def split_data(data, split_strategy='leave_one_last',
             DEFAULT_SPLIT_FLAG,
             axis=1
         )
-        get_intersect(train, [test, val])
+        if intersect:
+            get_intersect(train, [test, val])
         return train, val, test
 
     else:
-        get_intersect(train, [test])
+        if intersect:
+            get_intersect(train, [test])
         return train, test
 
 

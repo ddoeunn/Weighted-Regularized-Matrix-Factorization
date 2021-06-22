@@ -19,7 +19,7 @@ import inspect
 import pickle
 from glob import glob
 from datetime import datetime
-from utils.wrmf_utils import *
+from WRMF.wrmf_utils import *
 
 
 class Recommender:

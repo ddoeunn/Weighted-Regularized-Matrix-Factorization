@@ -16,7 +16,26 @@
 import os
 from tqdm.auto import trange
 from .base_recommender import Recommender
-from utils.wrmf_utils import *
+import cornac
+from WRMF.wrmf_utils import *
+from utils.common.constants import (
+    DEFAULT_USER_COL,
+    DEFAULT_ITEM_COL,
+    DEFAULT_RATING_COL,
+    DEFAULT_PREDICTION_COL,
+)
+
+
+def prepare_cornac_data(data):
+    return cornac.data.Dataset.from_uir(
+        data[[DEFAULT_USER_COL, DEFAULT_ITEM_COL, DEFAULT_RATING_COL]].itertuples(index=False)
+    )
+
+
+def train_cornac(model, data):
+    train_data = prepare_cornac_data(data)
+    model.fit(train_data)
+    return model
 
 
 class WRMF(Recommender):
@@ -285,3 +304,6 @@ class WRMF(Recommender):
                 )
             user_pred = self.V[item_idx, :].dot(self.U[user_idx, :])
             return user_pred
+
+
+
