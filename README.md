@@ -8,6 +8,17 @@ Weighted Regularized Matrix Factorization for Implicit Feedback in Recommender S
 
 I implemented WRMF methods in python in reference to [Cornac](https://cornac.readthedocs.io/en/latest/). Only uniform weighting strategy on positive or negative instances is available in WMF model in Cornac. By modifying the WMF code of Cornac,  I implemented user-oriented, item-oriented weighting strategy of "One-class collaborative filtering (Pan, Rong, et al.)" and item-popularity weighting strategy of "Fast matrix factorization for online recommendation with implicit feedback (He, Xiangnan, et al)".
 
+See the [example](https://github.com/ddoeunn/Weighted-Regularized-Matrix-Factorization/blob/main/Example/Example.ipynb) comparing weighting strategies.
+
+|      Data     	|     Strategy    	|  k 	| Train time (s) 	| Precision@k 	| Recall@k 	|  NDCG@k  	|
+|:-------------:	|:---------------:	|:--:	|:-------:	|:-----------:	|:--------:	|:--------:	|
+| movielens100k 	|   uniform_pos   	| 10 	|  6.2740 	|   0.292365  	| 0.184272 	| 0.343978 	|
+| movielens100k 	|   uniform_neg   	| 10 	|  9.2785 	|   0.327253  	| 0.215326 	| 0.383740 	|
+| movielens100k 	|  user_oriented  	| 10 	| 10.6478 	|   0.366172  	| 0.230124 	| 0.431030 	|
+| movielens100k 	|  item_oriented  	| 10 	|  9.8481 	|   0.361082  	| 0.229981 	| 0.426998 	|
+| movielens100k 	| item_popularity 	| 10 	| 11.0064 	|   0.360551  	| 0.231452 	| 0.423511 	|
+
+
 
 
 ---
@@ -17,4 +28,4 @@ Basic idea of Weighted Regularized Matrix Factorization (WRMF) is to assign smal
 
  Also, interacting with an item can be caused by a variety of reasons that differ from liking it. For example, a user may buy an item as gift for someone else, despite the user does not like the item. Thus it can be thought that there are also different confidence levels among the items that the user interacted with.
 
-Several weighting strategies have been proposed. Read more [here]() for more details.
+Several weighting strategies have been proposed. Read more [here](https://ddoeunn.github.io/2021/05/02/SUMMARY-Weighted-Matrix-Factorization-for-Implicit-Feedback.md.html) for more details.
