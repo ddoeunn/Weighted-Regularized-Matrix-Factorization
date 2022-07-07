@@ -48,4 +48,4 @@ Basic idea of Weighted Regularized Matrix Factorization (WRMF) is to assign smal
 
  Also, interacting with an item can be caused by a variety of reasons that differ from liking it. For example, a user may buy an item as gift for someone else, despite the user does not like the item. Thus it can be thought that there are also different confidence levels among the items that the user interacted with.
 
-Several weighting strategies have been proposed. Read more [here](https://ddoeunn.github.io/2021/05/02/SUMMARY-Weighted-Matrix-Factorization-for-Implicit-Feedback.md.html) for more details.
+Several weighting strategies have been proposed. Read more [here!](https://ddoeunn.github.io/2021/05/02/SUMMARY-Weighted-Matrix-Factorization-for-Implicit-Feedback.md.html) for more details.
