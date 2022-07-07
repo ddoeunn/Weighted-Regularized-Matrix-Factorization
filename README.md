@@ -43,7 +43,6 @@ ranking_metrics(top_k, test)                        # evaluation
 
 ---
 ## **Weighted Regularized Matrix Factorization (WRMF)**
-## **Weighted Regularized Matrix Factorization (WRMF)**
 
 Basic idea of Weighted Regularized Matrix Factorization (WRMF) is to assign smaller weights to the unobserved instances than the observed. The weights are related to the concept of confidence. As not interacting with an item can result from other reasons than not liking it, negative instances have low confidence. For example, a user might be unaware of the existence of the item, or unable to consume it due to its price or limited availability. Unobserved instances are a mixture of negative and unknown feedback.
 
